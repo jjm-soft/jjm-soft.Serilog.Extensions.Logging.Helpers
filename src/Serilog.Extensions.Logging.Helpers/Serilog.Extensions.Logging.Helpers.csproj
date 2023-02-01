@@ -18,7 +18,7 @@
     <PackageId>Serilog.Extensions.Logging.Helpers</PackageId>
     <Title>Serilog.Extensions.Logging.Helpers</Title>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>C:\Users\trainee.it\git\Serilog.Extensions.Logging.Helpers\src\Serilog.Extensions.Logging.Helpers.SignKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Serilog.Extensions.Logging.Helpers.SignKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
