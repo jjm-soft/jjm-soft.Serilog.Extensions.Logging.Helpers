@@ -13,7 +13,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Description>A collection of helper funktions for the Serilog logging tool.</Description>
+    <Description>A collection of helper functions for the Serilog logging tool.</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>Serilog.Extensions.Logging.Helpers</PackageId>
     <Title>Serilog.Extensions.Logging.Helpers</Title>

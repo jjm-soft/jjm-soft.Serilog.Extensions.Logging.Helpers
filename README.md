@@ -1,2 +1,3 @@
 # Serilog.Extensions.Logging.Helpers
-A collection of helper funktions for the Serilog logging tool.
+
+A collection of helper functions for the [Serilog](https://serilog.net/) logging tool.
