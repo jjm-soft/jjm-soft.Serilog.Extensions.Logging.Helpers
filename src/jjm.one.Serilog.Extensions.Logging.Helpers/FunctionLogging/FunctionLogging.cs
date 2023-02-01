@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace Serilog.Extensions.Logging.Helpers
+namespace jjm.one.Serilog.Extensions.Logging.Helpers
 {
     /// <summary>
     /// Static class for all function logging helper extensions.
