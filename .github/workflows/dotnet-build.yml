@@ -17,15 +17,14 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - name: change working dir
-      run: |
-        ls -la
-        cd src
     - name: Setup .NET
+      working-directory: ./src
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Restore dependencies
+      working-directory: ./src
       run: dotnet restore
     - name: Build
+      working-directory: ./src
       run: dotnet build --no-restore
