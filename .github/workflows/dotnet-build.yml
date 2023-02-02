@@ -17,6 +17,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+    - name: change working dir
+      run: cd src
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
