@@ -25,6 +25,17 @@ jobs:
         working-directory: ./src
     
     runs-on: ${{ matrix.os }}
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup dotNET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
   
   test:
   
@@ -50,21 +61,21 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
   
-  deploy-doc:
+  #deploy-doc:
   
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
     
-    steps:
-      - name: Deploy documentation
-        run: echo "Deploy documentation"
+    #steps:
+    #  - name: Deploy documentation
+    #    run: echo "Deploy documentation"
   
-  deploy-nuget:
+  #deploy-nuget:
   
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
     
-    steps:
-      - name: Deploy NuGet package
-        run: echo "Deploy NuGet package"
+    #steps:
+      #- name: Deploy NuGet package
+      #  run: echo "Deploy NuGet package"
   
   
 
