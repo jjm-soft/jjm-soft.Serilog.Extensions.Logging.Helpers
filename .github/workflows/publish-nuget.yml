@@ -26,7 +26,10 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Publish the package to nuget.org
-      run: ls -la
+      run: |
+        ls -la
+        cd jjm.one.Serilog.Extensions.Logging.Helpers
+        ls -la
       #run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
       #env:
       #  NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
