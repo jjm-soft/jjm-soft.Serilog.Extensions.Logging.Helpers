@@ -61,8 +61,8 @@ jobs:
       with:
         name: release-buid
         path: |
-          ./bin
-          ./obj
+          ./jjm.one.Serilog.Extensions.Logging.Helpers/bin
+          ./jjm.one.Serilog.Extensions.Logging.Helpers/obj
         retention-days: 1
   
   sonarcloud:
