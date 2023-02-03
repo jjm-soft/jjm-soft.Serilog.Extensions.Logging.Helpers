@@ -61,8 +61,7 @@ jobs:
       with:
         name: release-buid
         path: |
-          ./jjm.one.Serilog.Extensions.Logging.Helpers/bin
-          ./jjm.one.Serilog.Extensions.Logging.Helpers/obj
+          */bin/Release/*.nupkg
         retention-days: 1
   
   sonarcloud:
@@ -115,7 +114,7 @@ jobs:
   publish-nuget:
     name: Publish the NuGet package
     needs: [build-and-test-debug, build-and-test-release, sonarcloud, publish-doc]
-    if: github.ref_type == 'tag' && startsWith(github.event.ref, 'refs/tags/version-')
+    #if: github.ref_type == 'tag' && startsWith(github.event.ref, 'refs/tags/version-')
     runs-on: ubuntu-latest
     steps:
       - name: Download a single artifact
