@@ -61,7 +61,7 @@ jobs:
       with:
         name: release-buid
         path: |
-          */bin/Release/*.nupkg
+          ./jjm-one_jjm.one.Serilog.Extensions.Logging.Helpers/bin/Release/*.nupkg
         retention-days: 1
   
   sonarcloud:
