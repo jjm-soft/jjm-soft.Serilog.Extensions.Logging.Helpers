@@ -101,7 +101,8 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"jjm-one_jjm.one.Serilog.Extensions.Logging.Helpers" /o:"jjm-one" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           cd .\src
           dotnet restore
-          dotnet build --no-restore 
+          dotnet build --no-restore
+          cd ..
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
   publish-nuget:
