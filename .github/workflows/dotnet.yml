@@ -106,13 +106,13 @@ jobs:
 
   publish-nuget:
     name: Publish the NuGet package
-    needs: [build-and-test-debug, build-and-test-release, sonarcloud]
+    needs: [build-and-test-debug, build-and-test-release, sonarcloud, publish-doc]
     runs-on: ubuntu-latest
     steps:
       - name: Setup dotNET
-          uses: actions/setup-dotnet@v3
-          with:
-            dotnet-version: 7.x
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.x
       - name: Publish the package to nuget.org
         run: |
           ls -la
@@ -122,12 +122,10 @@ jobs:
       #env:
       #  NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
-  deploy-doc:
-  
-    needs: [build-debug, test-debug]
-  
+  publish-doc:
+    name: Publish Documentation
+    needs: [build-and-test-debug]
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v3
       - name: Deploy documentation
