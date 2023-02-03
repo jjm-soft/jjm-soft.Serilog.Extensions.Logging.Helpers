@@ -38,7 +38,9 @@ jobs:
       run: dotnet build --no-restore
   
   test:
-  
+    
+    needs: build
+    
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -51,31 +53,38 @@ jobs:
     runs-on: ${{ matrix.os }}
     
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup dotNET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: ${{ matrix.dotnet-version }}
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
   
-  #deploy-doc:
+  deploy-doc:
   
-    #runs-on: ubuntu-latest
+    needs: [build, test]
+  
+    runs-on: ubuntu-latest
     
-    #steps:
-    #  - name: Deploy documentation
-    #    run: echo "Deploy documentation"
+    steps:
+      - name: Deploy documentation
+        run: echo "Deploy documentation"
   
-  #deploy-nuget:
+  publish-nuget:
   
-    #runs-on: ubuntu-latest
+    needs: [build, test]
     
-    #steps:
-      #- name: Deploy NuGet package
-      #  run: echo "Deploy NuGet package"
+    defaults:
+      run:
+        working-directory: ./src
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Publish the package to nuget.org
+        run: |
+          ls -la
+          cd jjm.one.Serilog.Extensions.Logging.Helpers
+          ls -la
+      #run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
+      #env:
+      #  NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
   
   
 
