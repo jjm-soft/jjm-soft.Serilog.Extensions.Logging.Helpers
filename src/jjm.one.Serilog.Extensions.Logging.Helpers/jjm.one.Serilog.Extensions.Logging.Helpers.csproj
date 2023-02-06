@@ -23,9 +23,11 @@
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latestmajor</LangVersion>
+    <DocumentationFile>.\jjm.one.Serilog.Extensions.Logging.Helpers.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>latestmajor</LangVersion>
+    <DocumentationFile>.\jjm.one.Serilog.Extensions.Logging.Helpers.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\LICENSE">
