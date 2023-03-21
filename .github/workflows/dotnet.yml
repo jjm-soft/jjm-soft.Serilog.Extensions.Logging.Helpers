@@ -3,12 +3,12 @@ name: dotNet
 on:
   push:
     branches:
-      - master
+      - main
       - develop 
       - feature/ci
   pull_request:
     branches:
-      - master
+      - main
       - develop 
       - feature/ci
 
