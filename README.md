@@ -17,6 +17,7 @@ A collection of helper functions for the [Serilog.Extensions.Logging](https://ww
   - [Usage](#usage)
     - [Use function logging](#use-function-logging)
     - [Output of function logging](#output-of-function-logging)
+  - [Full Documentation](#full-documentation)
 
 ## Usage
 
@@ -54,3 +55,7 @@ Function called: MyClass -> MyFancyFunction
 Exception thrown in: MyClass -> MyFancyFunction
 My custom exception message!
 ```
+
+## Full Documentation
+
+The full documentation for this package can be found [here](https://jjm-one.github.io/jjm.one.Serilog.Extensions.Logging.Helpers/main/doc/html/index.html).
