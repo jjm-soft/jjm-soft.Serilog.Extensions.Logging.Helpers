@@ -18,6 +18,7 @@ A collection of helper functions for the [Serilog.Extensions.Logging](https://ww
     - [Use function logging](#use-function-logging)
     - [Output of function logging](#output-of-function-logging)
   - [Full Documentation](#full-documentation)
+  - [Repo](#repo)
 
 ## Usage
 
@@ -59,3 +60,7 @@ My custom exception message!
 ## Full Documentation
 
 The full documentation for this package can be found [here](https://jjm-one.github.io/jjm.one.Serilog.Extensions.Logging.Helpers/main/doc/html/index.html).
+
+## Repo
+
+The associated repo for this package can be found [here](https://github.com/jjm-one/jjm.one.Serilog.Extensions.Logging.Helpers).
