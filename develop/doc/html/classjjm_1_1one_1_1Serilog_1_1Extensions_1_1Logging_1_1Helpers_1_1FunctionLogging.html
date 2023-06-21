@@ -80,18 +80,83 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a778e555ec73815f2291aa8eb956af8dc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a778e555ec73815f2291aa8eb956af8dc">LogFctCall</a> (this ILogger logger, LogEventLevel level=LogEventLevel.Debug)</td></tr>
+<tr class="memdesc:a778e555ec73815f2291aa8eb956af8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a function/method call.  <a href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a778e555ec73815f2291aa8eb956af8dc">More...</a><br /></td></tr>
+<tr class="separator:a778e555ec73815f2291aa8eb956af8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41d9bb2e844e7593ec272f95b852b0a0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a41d9bb2e844e7593ec272f95b852b0a0">LogFctCall</a> (this ILogger logger, Type? classType, MethodBase? methodType, LogEventLevel level=LogEventLevel.Debug)</td></tr>
-<tr class="memdesc:a41d9bb2e844e7593ec272f95b852b0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a function call.  <a href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a41d9bb2e844e7593ec272f95b852b0a0">More...</a><br /></td></tr>
+<tr class="memdesc:a41d9bb2e844e7593ec272f95b852b0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a function/method call.  <a href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a41d9bb2e844e7593ec272f95b852b0a0">More...</a><br /></td></tr>
 <tr class="separator:a41d9bb2e844e7593ec272f95b852b0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8e8f21c7573b808012e2a1af36778c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a1b8e8f21c7573b808012e2a1af36778c">LogExcInFctCall</a> (this ILogger logger, Exception exc, string? msg=null, LogEventLevel level=LogEventLevel.Error)</td></tr>
+<tr class="memdesc:a1b8e8f21c7573b808012e2a1af36778c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log an exception within a function/method call.  <a href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a1b8e8f21c7573b808012e2a1af36778c">More...</a><br /></td></tr>
+<tr class="separator:a1b8e8f21c7573b808012e2a1af36778c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d5a6db1045c5a2d30fd2afb398ac9a2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a1d5a6db1045c5a2d30fd2afb398ac9a2">LogExcInFctCall</a> (this ILogger logger, Exception exc, Type? classType, MethodBase? methodType, string? msg=null, LogEventLevel level=LogEventLevel.Error)</td></tr>
-<tr class="memdesc:a1d5a6db1045c5a2d30fd2afb398ac9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log an exception within a function call.  <a href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a1d5a6db1045c5a2d30fd2afb398ac9a2">More...</a><br /></td></tr>
+<tr class="memdesc:a1d5a6db1045c5a2d30fd2afb398ac9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log an exception within a function/method call.  <a href="classjjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers_1_1FunctionLogging.html#a1d5a6db1045c5a2d30fd2afb398ac9a2">More...</a><br /></td></tr>
 <tr class="separator:a1d5a6db1045c5a2d30fd2afb398ac9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Static class for all function logging helper extensions. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1b8e8f21c7573b808012e2a1af36778c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b8e8f21c7573b808012e2a1af36778c">&#9670;&nbsp;</a></span>LogExcInFctCall() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void jjm.one.Serilog.Extensions.Logging.Helpers.FunctionLogging.LogExcInFctCall </td>
+          <td>(</td>
+          <td class="paramtype">this ILogger&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Exception&#160;</td>
+          <td class="paramname"><em>exc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string?&#160;</td>
+          <td class="paramname"><em>msg</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LogEventLevel&#160;</td>
+          <td class="paramname"><em>level</em> = <code>LogEventLevel.Error</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log an exception within a function/method call. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>The logger instance.</td></tr>
+    <tr><td class="paramname">exc</td><td>The exception.</td></tr>
+    <tr><td class="paramname">msg</td><td>The message of the exception.</td></tr>
+    <tr><td class="paramname">level</td><td>The logging level. Default is LogEventLevel.Error.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1d5a6db1045c5a2d30fd2afb398ac9a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d5a6db1045c5a2d30fd2afb398ac9a2">&#9670;&nbsp;</a></span>LogExcInFctCall()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5a6db1045c5a2d30fd2afb398ac9a2">&#9670;&nbsp;</a></span>LogExcInFctCall() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,13 +213,13 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Log an exception within a function call. </p>
+<p>Log an exception within a function/method call. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">logger</td><td>The logger instance.</td></tr>
     <tr><td class="paramname">exc</td><td>The exception.</td></tr>
     <tr><td class="paramname">classType</td><td>The Type of the calling class.</td></tr>
-    <tr><td class="paramname">methodType</td><td>The MethodBase of the calling method/function.</td></tr>
+    <tr><td class="paramname">methodType</td><td>The MethodBase of the calling function/method.</td></tr>
     <tr><td class="paramname">msg</td><td>The message of the exception.</td></tr>
     <tr><td class="paramname">level</td><td>The logging level. Default is LogEventLevel.Error.</td></tr>
   </table>
@@ -163,8 +228,53 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a778e555ec73815f2291aa8eb956af8dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778e555ec73815f2291aa8eb956af8dc">&#9670;&nbsp;</a></span>LogFctCall() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void jjm.one.Serilog.Extensions.Logging.Helpers.FunctionLogging.LogFctCall </td>
+          <td>(</td>
+          <td class="paramtype">this ILogger&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LogEventLevel&#160;</td>
+          <td class="paramname"><em>level</em> = <code>LogEventLevel.Debug</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a function/method call. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>The logger instance.</td></tr>
+    <tr><td class="paramname">level</td><td>The logging level. Default is LogEventLevel.Debug.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a41d9bb2e844e7593ec272f95b852b0a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41d9bb2e844e7593ec272f95b852b0a0">&#9670;&nbsp;</a></span>LogFctCall()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d9bb2e844e7593ec272f95b852b0a0">&#9670;&nbsp;</a></span>LogFctCall() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,12 +319,12 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Log a function call. </p>
+<p>Log a function/method call. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">logger</td><td>The logger instance.</td></tr>
     <tr><td class="paramname">classType</td><td>The Type of the calling class.</td></tr>
-    <tr><td class="paramname">methodType</td><td>The MethodBase of the calling method/function.</td></tr>
+    <tr><td class="paramname">methodType</td><td>The MethodBase of the calling function/method.</td></tr>
     <tr><td class="paramname">level</td><td>The logging level. Default is LogEventLevel.Debug.</td></tr>
   </table>
   </dd>
