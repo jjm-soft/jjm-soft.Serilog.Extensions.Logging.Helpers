@@ -1,9 +1,10 @@
 using System;
-using jjm.one.Microsoft.Extensions.Logging.Helpers.Tests.util;
-using Microsoft.Extensions.Logging;
+using jjm.one.Serilog.Extensions.Logging.Helpers.Tests.util;
 using Moq;
+using Serilog.Events;
+using Serilog;
 
-namespace jjm.one.Microsoft.Extensions.Logging.Helpers.Tests.FunctionLogging;
+namespace jjm.one.Serilog.Extensions.Logging.Helpers.Tests.FunctionLogging;
 
 public class FunctionLoggingTests
 {
@@ -32,41 +33,33 @@ public class FunctionLoggingTests
     public void LogFctCallTest1()
     {
         // arrange
-        _logger.Setup(x => x.Log(LogLevel.Debug, 0, It.IsAny<object>(), 
-            It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()!)).Verifiable();
+        _logger.Setup(x => x.Write(LogEventLevel.Debug, 
+            It.IsAny<string>(), It.IsAny<object?[]?>())).Verifiable();
 
         // act 
         _sut.Test1();
-
+        
         // assert
-        _logger.Verify(logger => logger.Log(
-                It.Is<LogLevel>(logLevel => logLevel == LogLevel.Debug),
-                0,
-                It.Is<It.IsAnyType>((@o, @t) => 
-                        @o.ToString()!.Equals($"Function called: {nameof(DummyClass)} -> {nameof(_sut.Test1)}")),
-                It.IsAny<Exception>(),
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()!),
-            Times.Once);
+        _logger.Verify(logger => logger.Write(LogEventLevel.Debug,
+                "Function called: {ClassName} -> {FctName}", 
+                nameof(DummyClass), nameof(DummyClass.Test1)),
+                Times.Once);
     }
     
     [Fact]
     public void LogFctCallTest2()
     {
         // arrange
-        _logger.Setup(x => x.Log(LogLevel.Debug, 0, It.IsAny<object>(), 
-            It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()!)).Verifiable();
+        _logger.Setup(x => x.Write(LogEventLevel.Debug, 
+            It.IsAny<string>(), It.IsAny<object?[]?>())).Verifiable();
 
         // act 
         _sut.Test2();
 
         // assert
-        _logger.Verify(logger => logger.Log(
-                It.Is<LogLevel>(logLevel => logLevel == LogLevel.Debug),
-                0,
-                It.Is<It.IsAnyType>((@o, @t) => 
-                    @o.ToString()!.Equals($"Function called: {nameof(DummyClass)} -> {nameof(_sut.Test2)}")),
-                It.IsAny<Exception>(),
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()!),
+        _logger.Verify(logger => logger.Write(LogEventLevel.Debug,
+                "Function called: {ClassName} -> {FctName}", 
+                nameof(DummyClass), nameof(DummyClass.Test2)),
             Times.Once);
     }
     
@@ -74,20 +67,17 @@ public class FunctionLoggingTests
     public void LogFctCallTest3()
     {
         // arrange
-        _logger.Setup(x => x.Log(LogLevel.Error, 0, It.IsAny<object>(), 
-            It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()!)).Verifiable();
+        _logger.Setup(x => x.Write(LogEventLevel.Debug, It.IsAny<Exception>(),
+            It.IsAny<string>(), It.IsAny<object?[]?>())).Verifiable();
 
         // act 
         _sut.Test3();
 
         // assert
-        _logger.Verify(logger => logger.Log(
-                It.Is<LogLevel>(logLevel => logLevel == LogLevel.Error),
-                0,
-                It.Is<It.IsAnyType>((@o, @t) => 
-                    @o.ToString()!.Equals($"Exception thrown in: {nameof(DummyClass)} -> {nameof(_sut.Test3)}")),
+        _logger.Verify(logger => logger.Write(LogEventLevel.Error,
                 It.IsAny<Exception>(),
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()!),
+                "Exception thrown in: {ClassName} -> {FctName}", 
+                nameof(DummyClass), nameof(DummyClass.Test3)),
             Times.Once);
     }
     
@@ -95,20 +85,17 @@ public class FunctionLoggingTests
     public void LogFctCallTest4()
     {
         // arrange
-        _logger.Setup(x => x.Log(LogLevel.Error, 0, It.IsAny<object>(), 
-            It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()!)).Verifiable();
+        _logger.Setup(x => x.Write(LogEventLevel.Debug, It.IsAny<Exception>(),
+            It.IsAny<string>(), It.IsAny<object?[]?>())).Verifiable();
 
         // act 
         _sut.Test4();
 
         // assert
-        _logger.Verify(logger => logger.Log(
-                It.Is<LogLevel>(logLevel => logLevel == LogLevel.Error),
-                0,
-                It.Is<It.IsAnyType>((@o, @t) => 
-                    @o.ToString()!.Equals($"Exception thrown in: {nameof(DummyClass)} -> {nameof(_sut.Test4)}\nTestMSG")),
+        _logger.Verify(logger => logger.Write(LogEventLevel.Error,
                 It.IsAny<Exception>(),
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()!),
+                "Exception thrown in: {ClassName} -> {FctName}\nTestMSG", 
+                nameof(DummyClass), nameof(DummyClass.Test4)),
             Times.Once);
     }
     
@@ -116,20 +103,17 @@ public class FunctionLoggingTests
     public void LogFctCallTest5()
     {
         // arrange
-        _logger.Setup(x => x.Log(LogLevel.Error, 0, It.IsAny<object>(), 
-            It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()!)).Verifiable();
+        _logger.Setup(x => x.Write(LogEventLevel.Debug, It.IsAny<Exception>(),
+            It.IsAny<string>(), It.IsAny<object?[]?>())).Verifiable();
 
         // act 
         _sut.Test5();
 
         // assert
-        _logger.Verify(logger => logger.Log(
-                It.Is<LogLevel>(logLevel => logLevel == LogLevel.Error),
-                0,
-                It.Is<It.IsAnyType>((@o, @t) => 
-                    @o.ToString()!.Equals($"Exception thrown in: {nameof(DummyClass)} -> {nameof(_sut.Test5)}")),
+        _logger.Verify(logger => logger.Write(LogEventLevel.Error,
                 It.IsAny<Exception>(),
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()!),
+                "Exception thrown in: {ClassName} -> {FctName}", 
+                nameof(DummyClass), nameof(DummyClass.Test5)),
             Times.Once);
     }
     
@@ -137,20 +121,17 @@ public class FunctionLoggingTests
     public void LogFctCallTest6()
     {
         // arrange
-        _logger.Setup(x => x.Log(LogLevel.Error, 0, It.IsAny<object>(), 
-            It.IsAny<Exception>(), It.IsAny<Func<object, Exception, string>>()!)).Verifiable();
+        _logger.Setup(x => x.Write(LogEventLevel.Debug, It.IsAny<Exception>(),
+            It.IsAny<string>(), It.IsAny<object?[]?>())).Verifiable();
 
         // act 
         _sut.Test6();
 
         // assert
-        _logger.Verify(logger => logger.Log(
-                It.Is<LogLevel>(logLevel => logLevel == LogLevel.Error),
-                0,
-                It.Is<It.IsAnyType>((@o, @t) => 
-                    @o.ToString()!.Equals($"Exception thrown in: {nameof(DummyClass)} -> {nameof(_sut.Test6)}\nTestMSG")),
+        _logger.Verify(logger => logger.Write(LogEventLevel.Error,
                 It.IsAny<Exception>(),
-                It.IsAny<Func<It.IsAnyType, Exception, string>>()!),
+                "Exception thrown in: {ClassName} -> {FctName}\nTestMSG", 
+                nameof(DummyClass), nameof(DummyClass.Test6)),
             Times.Once);
     }
 

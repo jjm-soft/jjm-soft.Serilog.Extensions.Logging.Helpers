@@ -1,8 +1,8 @@
 using System;
 using System.Reflection;
-using Microsoft.Extensions.Logging;
+using Serilog;
 
-namespace jjm.one.Microsoft.Extensions.Logging.Helpers.Tests.util;
+namespace jjm.one.Serilog.Extensions.Logging.Helpers.Tests.util;
 
 public class DummyClass
 {
