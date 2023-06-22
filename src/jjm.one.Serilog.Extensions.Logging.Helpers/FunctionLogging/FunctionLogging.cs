@@ -53,14 +53,15 @@ namespace jjm.one.Serilog.Extensions.Logging.Helpers
             
             if (string.IsNullOrEmpty(msg))
             {
-                logger.Write(level, exc, "Exception thrown in: {ClassName} -> {FctName}",
-                    method?.DeclaringType?.Name, method?.Name);
+                msg = string.Empty;
             }
             else
             {
-                logger.Write(level, exc, "Exception thrown in: {ClassName} -> {FctName}\n" + msg,
-                    method?.DeclaringType?.Name, method?.Name);
+                msg = "\n" + msg;
             }
+            
+            logger.Write(level, exc, "Exception thrown in: {ClassName} -> {FctName}{CustomMsg}",
+                method?.DeclaringType?.Name, method?.Name, msg);
         }
         
         /// <summary>
@@ -77,14 +78,15 @@ namespace jjm.one.Serilog.Extensions.Logging.Helpers
         {
             if (string.IsNullOrEmpty(msg))
             {
-                logger.Write(level, exc, "Exception thrown in: {ClassName} -> {FctName}", 
-                    classType?.Name, methodType?.Name);
+                msg = string.Empty;
             }
             else
             {
-                logger.Write(level, exc, "Exception thrown in: {ClassName} -> {FctName}\n" + msg, 
-                    classType?.Name, methodType?.Name);
+                msg = "\n" + msg;
             }
+            
+            logger.Write(level, exc, "Exception thrown in: {ClassName} -> {FctName}{CustomMsg}", 
+                classType?.Name, methodType?.Name, msg);
         }
     }
 }
