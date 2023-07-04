@@ -16,6 +16,7 @@ A collection of helper functions for the [Serilog.Extensions.Logging](https://ww
   - [Status](#status)
   - [Table of contents](#table-of-contents)
   - [Nuget Package](#nuget-package)
+    - [Installing the Nuget Package](#installing-the-nuget-package)
   - [Usage](#usage)
     - [Use function logging](#use-function-logging)
     - [Output of function logging](#output-of-function-logging)
@@ -25,6 +26,18 @@ A collection of helper functions for the [Serilog.Extensions.Logging](https://ww
 ## Nuget Package
 
 You can get the latest version of this software as a nuget package form [nuget.org](https://www.nuget.org/packages/jjm.one.Serilog.Extensions.Logging.Helpers/)
+
+### Installing the Nuget Package
+
+| Tool                 | Command/Code |
+|----------------------|--------------|
+| Package Manager      | ```PM> Install-Package jjm.one.Serilog.Extensions.Logging.Helper -Version X.Y.Z``` |
+| .NET CLI             | ```> dotnet add package jjm.one.Serilog.Extensions.Logging.Helper --version X.Y.Z``` |
+| PackageReference     | ```<PackageReference Include="jjm.one.Serilog.Extensions.Logging.Helper" Version="X.Y.Z" />``` |
+| Package CLI          | ```> paket add jjm.one.Serilog.Extensions.Logging.Helper --version X.Y.Z``` |
+| Script & Interactive | ```> #r "nuget: jjm.one.Serilog.Extensions.Logging.Helper, X.Y.Z"``` |
+| Cake as Addin        | ```#addin nuget:?package=jjm.one.Serilog.Extensions.Logging.Helper&version=X.Y.Z``` |
+| Cake as Tool         | ```#tool nuget:?package=jjm.one.Serilog.Extensions.Logging.Helper&version=X.Y.Z``` |
 
 ## Usage
 
@@ -37,7 +50,10 @@ class MyClass {
 
     void MyFancyFunction() {
 
-        // log the function call
+        // log the function call (minimal parameters)
+        Log.Logger.LogFctCall();
+
+        // log the function call (full parameters)
         Log.Logger.LogFctCall(GetType(), MethodBase.GetCurrentMethod(), LogEventLevel.Debug);
 
         try {
@@ -46,7 +62,10 @@ class MyClass {
         }
         catch (Exception exc) {
 
-            // Log the exception
+            // Log the exception (minimal parameters)      
+            Log.Logger.LogExcInFctCall(exc);      
+
+            // Log the exception (full parameters)
             Log.Logger.LogExcInFctCall(exc, GetType(), MethodBase.GetCurrentMethod(), "My custom exception message!", LogEventLevel.Error);
         }
     }

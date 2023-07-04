@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jjm.one.Serilog.Extensions.Logging.Helpers", "jjm.one.Serilog.Extensions.Logging.Helpers\jjm.one.Serilog.Extensions.Logging.Helpers.csproj", "{2F70667F-DFE5-4A77-9CD7-4BC0FA9BA3D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jjm.one.Serilog.Extensions.Logging.Helpers.Tests", "jjm.one.Serilog.Extensions.Logging.Helpers.Tests\jjm.one.Serilog.Extensions.Logging.Helpers.Tests.csproj", "{C4C6C89D-E6FA-403F-9FFE-34F3D7E4ED5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2F70667F-DFE5-4A77-9CD7-4BC0FA9BA3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F70667F-DFE5-4A77-9CD7-4BC0FA9BA3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F70667F-DFE5-4A77-9CD7-4BC0FA9BA3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C6C89D-E6FA-403F-9FFE-34F3D7E4ED5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C6C89D-E6FA-403F-9FFE-34F3D7E4ED5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C6C89D-E6FA-403F-9FFE-34F3D7E4ED5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C6C89D-E6FA-403F-9FFE-34F3D7E4ED5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
