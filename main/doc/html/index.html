@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">jjm.one.Serilog.Extensions.Logging.Helpers
-   &#160;<span id="projectnumber">1.0.3</span>
+   &#160;<span id="projectnumber">1.2.0</span>
    </div>
    <div id="projectbrief">A collection of helper functions for the Serilog.Extensions.Logging logging tool.</div>
   </td>
@@ -64,7 +64,7 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="namespacejjm_1_1one_1_1Serilog_1_1Extensions_1_1Logging_1_1Helpers.html">jjm.one.Serilog.Extensions.Logging.Helpers</a> </div>  </div>
+<div class="title">jjm.one.Serilog.Extensions.Logging.Helpers </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> A collection of helper functions for the <a href="https://www.nuget.org/packages/Serilog.Extensions.Logging">Serilog.Extensions.Logging</a> logging tool.</p>
@@ -86,7 +86,10 @@ Table of contents</h1>
 <li><a href="#jjmoneserilogextensionslogginghelpers">jjm.one.Serilog.Extensions.Logging.Helpers</a><ul>
 <li><a href="#status">Status</a></li>
 <li><a href="#table-of-contents">Table of contents</a></li>
-<li><a href="#nuget-package">Nuget Package</a></li>
+<li><a href="#nuget-package">Nuget Package</a><ul>
+<li><a href="#installing-the-nuget-package">Installing the Nuget Package</a></li>
+</ul>
+</li>
 <li><a href="#usage">Usage</a><ul>
 <li><a href="#use-function-logging">Use function logging</a></li>
 <li><a href="#output-of-function-logging">Output of function logging</a></li>
@@ -100,9 +103,29 @@ Table of contents</h1>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Nuget Package</h1>
 <p>You can get the latest version of this software as a nuget package form <a href="https://www.nuget.org/packages/jjm.one.Serilog.Extensions.Logging.Helpers/">nuget.org</a></p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Installing the Nuget Package</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Tool   </th><th class="markdownTableHeadNone">Command/Code    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Package Manager   </td><td class="markdownTableBodyNone"><code>PM&gt; Install-Package jjm.one.Serilog.Extensions.Logging.Helper -Version X.Y.Z</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">.NET CLI   </td><td class="markdownTableBodyNone"><code>&gt; dotnet add package jjm.one.Serilog.Extensions.Logging.Helper --version X.Y.Z</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">PackageReference   </td><td class="markdownTableBodyNone"><code>&lt;PackageReference Include="jjm.one.Serilog.Extensions.Logging.Helper" Version="X.Y.Z" /&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Package CLI   </td><td class="markdownTableBodyNone"><code>&gt; paket add jjm.one.Serilog.Extensions.Logging.Helper --version X.Y.Z</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Script &amp; Interactive   </td><td class="markdownTableBodyNone"><code>&gt; #r "nuget: jjm.one.Serilog.Extensions.Logging.Helper, X.Y.Z"</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Cake as Addin   </td><td class="markdownTableBodyNone"><code>#addin nuget:?package=jjm.one.Serilog.Extensions.Logging.Helper&amp;version=X.Y.Z</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Cake as Tool   </td><td class="markdownTableBodyNone"><code>#tool nuget:?package=jjm.one.Serilog.Extensions.Logging.Helper&amp;version=X.Y.Z</code>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Usage</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Use function logging</h2>
 <div class="fragment"><div class="line">class MyClass {</div>
 <div class="line"> </div>
@@ -110,7 +133,10 @@ Use function logging</h2>
 <div class="line"> </div>
 <div class="line">    void MyFancyFunction() {</div>
 <div class="line"> </div>
-<div class="line">        // log the function call</div>
+<div class="line">        // log the function call (minimal parameters)</div>
+<div class="line">        Log.Logger.LogFctCall();</div>
+<div class="line"> </div>
+<div class="line">        // log the function call (full parameters)</div>
 <div class="line">        Log.Logger.LogFctCall(GetType(), MethodBase.GetCurrentMethod(), LogEventLevel.Debug);</div>
 <div class="line"> </div>
 <div class="line">        try {</div>
@@ -119,22 +145,25 @@ Use function logging</h2>
 <div class="line">        }</div>
 <div class="line">        catch (Exception exc) {</div>
 <div class="line"> </div>
-<div class="line">            // Log the exception</div>
+<div class="line">            // Log the exception (minimal parameters)      </div>
+<div class="line">            Log.Logger.LogExcInFctCall(exc);      </div>
+<div class="line"> </div>
+<div class="line">            // Log the exception (full parameters)</div>
 <div class="line">            Log.Logger.LogExcInFctCall(exc, GetType(), MethodBase.GetCurrentMethod(), &quot;My custom exception message!&quot;, LogEventLevel.Error);</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    // ...</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
 Output of function logging</h2>
 <div class="fragment"><div class="line">Function called: MyClass -&gt; MyFancyFunction</div>
 <div class="line">Exception thrown in: MyClass -&gt; MyFancyFunction</div>
 <div class="line">My custom exception message!</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Full Documentation</h1>
 <p>The full documentation for this package can be found <a href="https://jjm-one.github.io/jjm.one.Serilog.Extensions.Logging.Helpers/main/doc/html/index.html">here</a>.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Repo</h1>
 <p>The associated repo for this package can be found <a href="https://github.com/jjm-one/jjm.one.Serilog.Extensions.Logging.Helpers">here</a>. </p>
 </div></div><!-- PageDoc -->
