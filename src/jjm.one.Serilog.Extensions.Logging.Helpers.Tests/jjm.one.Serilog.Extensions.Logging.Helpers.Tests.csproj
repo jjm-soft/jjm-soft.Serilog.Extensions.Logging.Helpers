@@ -44,7 +44,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\jjm.one.Serilog.Extensions.Logging.Helpers\jjm.one.Serilog.Extensions.Logging.Helpers.csproj" />
+        <ProjectReference Include="..\jjm.one.Serilog.Extensions.Logging.Helpers\jjm.one.Serilog.Extensions.Logging.Helpers.csproj" />
     </ItemGroup>
 
 </Project>
