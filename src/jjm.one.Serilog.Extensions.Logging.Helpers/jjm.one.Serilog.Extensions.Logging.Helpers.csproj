@@ -15,7 +15,7 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/jjm.one/jjm-one.Serilog.Extensions.Logging.Helpers.git</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageLicenseFile>COPYING.LESSER.txt</PackageLicenseFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <SignAssembly>True</SignAssembly>
         <AssemblyOriginatorKeyFile>jjm.one.Serilog.Extensions.Logging.Helpers.SignKey.snk</AssemblyOriginatorKeyFile>
@@ -32,11 +32,7 @@
         <DocumentationFile>.\jjm.one.Serilog.Extensions.Logging.Helpers.xml</DocumentationFile>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="..\..\COPYING.txt">
-            <Pack>True</Pack>
-            <PackagePath>\</PackagePath>
-        </None>
-        <None Include="..\..\COPYING.LESSER.txt">
+        <None Include="..\..\LICENSE">
             <Pack>True</Pack>
             <PackagePath>\</PackagePath>
         </None>
